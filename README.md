@@ -45,6 +45,8 @@ Complete Login Service and Containerize.
 Complete Employee Service and Containerize.
 Run images using Docker Compose.
 Test with Postman and MySQL WorkBench.
+
+
 Week 2 & 3 - Spring Cloud Continued
 Udemy Courses
 Microservices with Spring Cloud (continued)
@@ -55,6 +57,8 @@ Implement Security: oAuth, JWT, etc.
 Run using Docker Compose.
 Test Services via Zuul API Gateway.
 Start Kafka Training
+
+
 Week 4 - Journey to the Cloud - Backend Services
 Kubernetes for the Absolute Beginner – Hands-on - 5.5 hours
 Tasks
@@ -65,6 +69,8 @@ Test Services via Zuul API Gateway using Postman.
 Backend Demonstration
 Services must be running on a Cloud platform implemented using Kubernetes (or use minikube).
 Be prepared to discuss each service component.
+
+
 Weeks 5 & 6 - Angular & Reach
 Udemy Courses
 Angular Step by Step for beginners - 8 hours
@@ -87,6 +93,8 @@ UI and Service components must be running on a Cloud platform implemented using 
 Be prepared to discuss each application component.
 Both UIs must run in parallel
 Test services via UIs.
+
+
 Week 8 - Apache Kafka
 Udemy Courses
 Kafka & Kafka Stream With Java Spring Boot - Hands-on Coding - 16 hours
