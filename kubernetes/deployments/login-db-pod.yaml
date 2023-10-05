@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: login-db
+  name: login-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: login-db
+  template:
+    metadata:
+      labels:
+        io.kompose.service: login-db
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: login-db
+          image: lerenzom/login-database:latest
+          ports:
+            - containerPort: 3307
+          volumeMounts:
+            - name: employee-login
+              mountPath: /var/lib/mysql
+          env:
+            - name: MYSQL_DATABASE
+              value: employee_login
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+          resources: {}
+          
+
+      volumes:
+        - name: employee-login
+          persistentVolumeClaim:
+            claimName: employee-login

@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: api-gateway
+  name: api-gateway
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: api-gateway
+  template:
+    metadata:
+      labels:
+        io.kompose.service: api-gateway
+    spec:
+      containers:
+        - image: lerenzom/gateway:latest
+          name: api-gateway
+          ports:
+            - containerPort: 8060
+          env:
+            - name: eureka.client.serviceUrl.defaultZone
+              value: http://eureka-discovery:8761/eureka/
+            - name: spring_cloud_gateway_routes_0_id
+              value: spring-employee-service
+            - name: spring_cloud_gateway_routes_0_uri
+              value: http://spring-employee-service:8082
+            - name: spring_cloud_gateway_routes_0_predicates_0
+              value: Path=/employees/**
+            - name: spring_cloud_gateway_routes_0_filters_0
+              value: AuthenticationFilter
+            - name: spring_cloud_gateway_routes_1_id
+              value: login-service
+            - name: spring_cloud_gateway_routes_1_uri
+              value: http://login-service:8083
+            - name: spring_cloud_gateway_routes_1_predicates_0
+              value: Path=/logins/**
+            - name: spring_cloud_gateway_routes_1_filters_0
+              value: AuthenticationFilter
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: JWT_SECRET
+      restartPolicy: Always
+

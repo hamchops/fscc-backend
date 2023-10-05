@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    io.kompose.service: login-db
+  name: login-db
+spec:
+  ports:
+    - name: "3307"
+      port: 3307
+      targetPort: 3307
+  selector:
+    io.kompose.service: login-db

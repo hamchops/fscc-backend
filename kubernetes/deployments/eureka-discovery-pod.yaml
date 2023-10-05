@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: eureka-discovery
+  name: eureka-discovery
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: eureka-discovery
+  template:
+    metadata:
+      labels:
+        io.kompose.service: eureka-discovery
+    spec:
+      containers:
+        - image: lerenzom/discovery-service:latest
+          name: employee-discovery-service
+          ports:
+            - containerPort: 8761
+          env:
+            - name: eureka.client.serviceUrl.defaultZone
+              value: http://eureka-discovery:8761/eureka/
+      restartPolicy: Always

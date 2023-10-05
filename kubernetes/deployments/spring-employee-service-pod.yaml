@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: spring-employee-service
+  name: spring-employee-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: spring-employee-service
+  template:
+    metadata:
+      labels:
+        io.kompose.service: spring-employee-service
+    spec:
+      containers:
+        - image: lerenzom/employee-service:latest
+          name: spring-employee-service
+          ports:
+            - containerPort: 8080
+          env:
+            - name: eureka.client.serviceUrl.defaultZone
+              value: http://eureka-discovery:8761/eureka/
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://employee-db:3306/employee_data
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root
+
+      restartPolicy: Always
