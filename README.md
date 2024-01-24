@@ -1,13 +1,7 @@
 # fscc-backend
 FSCC backend
 
-Full Stack Coding Challenge
-Welcome to the IBM BR CIC Java Full Stack Coding Challenge. The coding challenge is designed to build the skills of apprentices and entry level associates seeking a path as a Java Full Stack developer with a cloud native approach. The challenge leverages the technologies highly in demand by our clients. These technologies are not limited too but include Java, Spring Boot, Spring Cloud, Docker, Docker Compose, Kubernetes, Angular and React. There are eight components (containers) that should be running simultaneously:
-
-Two UIs (Angular and React) running in parallel
-Four Spring Boot Applications
-Two Databases (SQL or NoSQL).
-The ultimate goal is the Journey to the Cloud which is accomplished by deploying the challenge on a cloud platform of the associate's choice: AWS, Azure, IBM Cloud, Google Cloud, or Red Hat OpenShift.
+Implemented a comprehensive Full Stack Coding Challenge focusing on Java development with a cloud-native approach. Leveraged key technologies such as Java, Spring Boot, Spring Cloud, Docker, Docker Compose, Kubernetes, Angular, and React. The project comprises eight components (containers), including four Spring Boot applications and two databases (SQL or NoSQL). The ultimate objective is to achieve the Journey to the Cloud by deploying the challenge on a chosen cloud platform, such as AWS, Azure, IBM Cloud, Google Cloud, or Red Hat OpenShift.
 
 Before You Get Started
 Install JDK 1.8 or later.  JDK 1.8 is recommended for the challenge.
@@ -17,8 +11,8 @@ Preferred IDEs. However, feel free to use the IDE of your liking.
 Install Spring Tool Suite (STS) for Java.
 Install Visual Studio Code
 Create a Docker Hub Account
-Create an IBM Cloud Account
-Create an IBM GitHub Account
+Create an Cloud Account
+Create an GitHub Account
 If you are not familiar with Git commands, feel free to find an online training tutorial or enroll in the Udemy Course - Git for Geeks.
 Fork the Git repository to make a copy in your repository.
 Projects in this Repository
@@ -71,7 +65,7 @@ Services must be running on a Cloud platform implemented using Kubernetes (or us
 Be prepared to discuss each service component.
 
 
-Weeks 5 & 6 - Angular & Reach
+Weeks 5 & 6 - Angular & React
 Udemy Courses
 Angular Step by Step for beginners - 8 hours
 Hello React - React Training for JavaScript Beginners - 6 hours
